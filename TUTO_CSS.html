@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUTO CSS</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <header>
+        <h1>Tuto Page CSS</h1>
+    </header>
+
+    <main>
+        <section class="introduction">
+            <h2>Introduction</h2>
+            <p>
+                Cette page t’apprend à <strong>styliser une page HTML</strong> avec du <strong>CSS</strong>, 
+                même sans internet. Chaque partie contient un <strong>exemple à copier</strong> et un <strong>résultat visible</strong>.
+            </p>
+        </section>
+
+        <!-- ==================== PARTIE 1 ==================== -->
+        <section class="partie1">
+            <h2>I. Où mettre le CSS ? (3 méthodes)</h2>
+            <ul>
+                <li><strong>Interne</strong> → dans <code>&lt;style&gt;</code> dans <code>&lt;head&gt;</code></li>
+                <li><strong>Externe</strong> → fichier <code>.css</code> (recommandé)</li>
+                <li><strong>En ligne</strong> → <code>style="..."</code> dans la balise</li>
+            </ul>
+
+            <h3>Exemple externe (le nôtre)</h3>
+            <pre class="code-block">
+&lt;link rel="stylesheet" href="../static/style.css"&gt;
+            </pre>
+
+            <p><strong>Conseil :</strong> Toujours utiliser un fichier externe → plus propre !</p>
+        </section>
+
+        <!-- ==================== PARTIE 2 ==================== -->
+        <section class="partie2">
+            <h2>II. Syntaxe CSS de base</h2>
+            <p>Un sélecteur → une règle → des propriétés :</p>
+
+            <pre class="code-block">
+sélecteur {
+    propriété: valeur;
+    propriété: valeur;
+}
+            </pre>
+
+            <h3>Exemple</h3>
+            <pre class="code-block">
+h1 {
+    color: blue;
+    text-align: center;
+}
+            </pre>
+
+            <div class="demo">
+                <h1 style="color:blue; text-align:center;">Je suis centré et bleu !</h1>
+            </div>
+        </section>
+
+        <!-- ==================== PARTIE 3 ==================== -->
+        <section class="partie3">
+            <h2>III. Sélecteurs CSS</h2>
+            <ul>
+                <li><code>h1</code> → toutes les balises <code>&lt;h1&gt;</code></li>
+                <li><code>.ma-classe</code> → tous les éléments avec <code>class="ma-classe"</code></li>
+                <li><code>#mon-id</code> → un seul élément avec <code>id="mon-id"</code></li>
+                <li><code>header p</code> → paragraphe dans <code>&lt;header&gt;</code></li>
+            </ul>
+
+            <h3>Exemple</h3>
+            <pre class="code-block">
+.titre-rouge { color: red; }
+#unique { background: yellow; }
+nav a { text-decoration: none; }
+            </pre>
+        </section>
+
+        <!-- ==================== PARTIE 4 ==================== -->
+        <section class="partie4">
+            <h2>IV. Couleurs, polices, tailles</h2>
+
+            <h3>Exemple complet</h3>
+            <p><a href="TUTO_POLICE.html">Exemple de police</a></p>
+            <pre class="code-block">
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    color: #333;
+    font-size: 16px;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    text-align: center;
+}
+            </pre>
+
+            <div class="demo" style="background:#f0f0f0; padding:15px; font-family:Arial; color:#333;">
+                <h1 style="color:#2c3e50; font-size:2.5rem; text-align:center;">Exemple appliqué</h1>
+            </div>
+        </section>
+
+        <!-- ==================== PARTIE 5 ==================== -->
+        <section class="partie5">
+            <h2>V. Marges, padding, bordures (Box Model)</h2>
+            <p>Tout élément = contenu + padding + bordure + marge</p>
+
+            <h3>Exemple</h3>
+            <pre class="code-block">
+.boite {
+    width: 200px;
+    padding: 20px;
+    margin: 15px auto;
+    border: 3px solid #3498db;
+    border-radius: 10px;
+    background: #ecf0f1;
+    text-align: center;
+}
+            </pre>
+
+            <div class="demo">
+                <div style="width:200px; padding:20px; margin:15px auto; border:3px solid #3498db; border-radius:10px; background:#ecf0f1; text-align:center;">
+                    Je suis une boîte !
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PARTIE 6 ==================== -->
+        <section class="partie6">
+            <h2>VI. Styliser un bouton</h2>
+
+            <h3>Exemple CSS</h3>
+            <pre class="code-block">
+.btn {
+    background: #27ae60;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #219653;
+}
+            </pre>
+
+            <div class="demo" style="text-align:center; margin:20px;">
+                <button style="background:#27ae60; color:white; padding:12px 24px; border:none; border-radius:6px; cursor:pointer; font-size:1rem;">
+                    Bouton natif
+                </button>
+                <a href="#" style="background:#27ae60; color:white; padding:12px 24px; border:none; border-radius:6px; cursor:pointer; font-size:1rem; text-decoration:none; display:inline-block; margin-left:10px;">
+                    Bouton lien
+                </a>
+            </div>
+        </section>
+
+        <!-- ==================== PARTIE 7 ==================== -->
+        <section class="partie7">
+            <h2>VII. Flexbox : aligner facilement</h2>
+
+            <h3>Exemple</h3>
+            <pre class="code-block">
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    background: #34495e;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+            </pre>
+
+            <div class="demo">
+                <ul style="display:flex; justify-content:center; gap:20px; list-style:none; background:#34495e; padding:15px; border-radius:8px; margin:0;">
+                    <li><a href="#" style="color:white; text-decoration:none;">Accueil</a></li>
+                    <li><a href="#" style="color:white; text-decoration:none;">CSS</a></li>
+                    <li><a href="#" style="color:white; text-decoration:none;">Contact</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ==================== PARTIE 8 ==================== -->
+        <section class="partie8">
+            <h2>VIII. Responsive : adapter à mobile</h2>
+
+            <h3>Exemple avec Media Query</h3>
+            <pre class="code-block">
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .menu {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+            </pre>
+
+            <p><strong>Test :</strong> Rétrécis ta fenêtre → le menu devient vertical !</p>
+        </section>
+
+        <!-- ==================== PARTIE 9 ==================== -->
+        <section class="partie9">
+            <h2>IX. Glossaire CSS essentiel</h2>
+            <ul>
+                <li><code>color</code> → couleur texte</li>
+                <li><code>background</code> → fond (couleur/image)</li>
+                <li><code>font-size</code> → taille police (<code>px</code>, <code>rem</code>, <code>em</code>)</li>
+                <li><code>margin</code> → espace extérieur</li>
+                <li><code>padding</code> → espace intérieur</li>
+                <li><code>border</code> → bordure</li>
+                <li><code>border-radius</code> → coins arrondis</li>
+                <li><code>display: flex</code> → alignement flexible</li>
+                <li><code>text-align</code> → alignement texte</li>
+                <li><code>@media</code> → responsive</li>
+            </ul>
+        </section>
+
+        <!-- ==================== PARTIE 10 ==================== -->
+        <section class="partie10">
+            <h2>X. Projet final : Page complète stylisée</h2>
+            <p>Crée un fichier <code>projet.css</code> et colle :</p>
+
+            <details>
+                <summary><strong>Clique pour voir le code complet</strong></summary>
+                <pre class="code-block" style="max-height:500px; overflow:auto;">
+/* style.css - Dans static/ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+h1 { font-size: 2.2rem; }
+h2 { color: #3498db; margin: 1.5rem 0 1rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
+h3 { color: #e67e22; margin: 1rem 0; }
+
+section {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+pre {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    margin: 1rem 0;
+}
+
+code {
+    background: #eee;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+ul {
+    margin-left: 1.5rem;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1rem;
+    background: #ecf0f1;
+    border-radius: 8px;
+}
+
+a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+                </pre>
+            </details>
+
+            <p><strong>Résultat :</strong> Une page moderne, responsive, avec menu, bouton, boîte !</p>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="TUTO_HTML.html">Tutoriel HTML</a></p>
+    </footer>
+
+</body>
+</html>

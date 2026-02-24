@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUTO HTML</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <header>
+        <h1>Tuto Page HTML</h1>
+    </header>
+
+    <main>
+        <section class="introduction">
+            <h2>Introduction</h2>
+            <p>
+                Cette page est un <strong>guide pas à pas</strong> pour créer une page web HTML, 
+                même sans internet. Utilise-la comme un <strong>glossaire</strong> ou un <strong>tutoriel</strong>.
+            </p>
+        </section>
+
+        <section class="partie1">
+            <h2>I. Organisation des fichiers</h2>
+            <p>Crée un dossier clair comme ceci :</p>
+
+            <pre class="folder-structure">
+Dossier principal/
+├── static/
+│   ├── style.css
+│   └── images/
+│       └── photo.jpg
+│   └── police/
+│       └── century_gothic.ttf
+├── template/
+│   ├── TUTO_HTML.html
+│   └── TUTO_CSS.html
+└── README.txt
+            </pre>
+
+            <p><strong>Conseil :</strong> Mets tous tes fichiers CSS dans <code>static/</code> et tes pages dans <code>template/</code>.</p>
+        </section>
+
+        <section class="partie2">
+            <h2>II. Créer une page HTML</h2>
+            <p>Crée un fichier nommé <code>index.html</code> dans le dossier <code>template/</code>.</p>
+
+            <h3>Structure de base (à copier)</h3>
+            <pre class="code-block">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Ma Page&lt;/title&gt;
+    &lt;link rel="stylesheet" href="../static/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Bonjour !&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+
+            <p><strong>Exemple réel :</strong> Ouvre ce fichier → tu verras un titre centré !</p>
+        </section>
+
+        <!-- ==================== PARTIE 3 ==================== -->
+        <section class="partie3">
+            <h2>III. Structurer sa page : header, body, main, section, div</h2>
+            <p>Utilise les balises sémantiques pour organiser ton contenu :</p>
+            <ul>
+                <li><code>&lt;header&gt;</code> → En-tête (logo, titre)</li>
+                <li><code>&lt;main&gt;</code> → Contenu principal</li>
+                <li><code>&lt;section&gt;</code> → Partie thématique</li>
+                <li><code>&lt;div&gt;</code> → Conteneur générique</li>
+            </ul>
+
+            <h3>Exemple à copier</h3>
+            <pre class="code-block">
+&lt;header&gt;
+    &lt;h1&gt;Mon Site&lt;/h1&gt;
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;section&gt;
+        &lt;h2&gt;Accueil&lt;/h2&gt;
+        &lt;p&gt;Bienvenue !&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;div class="boite"&gt;Contenu spécial&lt;/div&gt;
+&lt;/main&gt;
+            </pre>
+
+            <div class="demo">
+                <strong>Résultat :</strong> Une page bien structurée, prête à être stylisée.
+            </div>
+        </section>
+
+        <!-- ==================== PARTIE 4 ==================== -->
+        <section class="partie4">
+            <h2>IV. Nommer ces parties pour plus tard affecter un style</h2>
+            <p>Ajoute <code>class</code> ou <code>id</code> pour cibler avec CSS :</p>
+            <ul>
+                <li><code>class="nom"</code> → Pour plusieurs éléments</li>
+                <li><code>id="nom"</code> → Pour un seul élément</li>
+            </ul>
+
+            <h3>Exemple</h3>
+            <pre class="code-block">
+&lt;header class="entete"&gt;
+    &lt;h1 id="titre-principal"&gt;Mon Site&lt;/h1&gt;
+&lt;/header&gt;
+&lt;div class="carte"&gt;Contenu stylisé&lt;/div&gt;
+            </pre>
+
+            <p>En CSS : <code>.carte { background: yellow; }</code> → appliqué à tous les <code>.carte</code></p>
+        </section>
+
+        <!-- ==================== PARTIE 5 ==================== -->
+        <section class="partie5">
+            <h2>V. Faire un chemin vers une autre page</h2>
+            <p>Utilise <code>&lt;a href="..."&gt;</code> avec le bon chemin :</p>
+
+            <h3>Exemple depuis <code>index.html</code></h3>
+            <pre class="code-block">
+&lt;a href="page2.html"&gt;Aller à la page 2&lt;/a&gt;
+&lt;a href="../static/images/photo.jpg"&gt;Voir l'image&lt;/a&gt;
+&lt;a href="https://google.com"&gt;Google (internet requis)&lt;/a&gt;
+            </pre>
+
+            <p><strong>Chemin relatif :</strong> <code>page2.html</code> → même dossier<br>
+               <strong>Chemin absolu :</strong> <code>../static/style.css</code> → remonte d’un dossier</p>
+        </section>
+
+        <!-- ==================== PARTIE 6 ==================== -->
+        <section class="partie6">
+            <h2>VI. Insérer un bouton</h2>
+            <p>Utilise <code>&lt;button&gt;</code> pour une action ou <code>&lt;a&gt;</code> pour de la navigation :</p>
+
+            <h3>Exemple</h3>
+            <pre class="code-block">
+&lt;button&gt;Cliquez-moi !&lt;/button&gt;
+
+&lt;a href="page2.html" class="btn"&gt;Aller à la page 2&lt;/a&gt;
+            </pre>
+
+            <div class="demo">
+                <button style="margin:5px;">Bouton natif</button>
+                <a href="#" class="btn" style="display:inline-block; margin:5px;">Bouton lien</a>
+            </div>
+        </section>
+
+        <!-- ==================== PARTIE 7 ==================== -->
+        <section class="partie7">
+            <h2>VII. Insérer une image</h2>
+            <p>Utilise <code>&lt;img&gt;</code> avec <code>src</code> et <code>alt</code> :</p>
+
+            <h3>Exemple</h3>
+            <pre class="code-block">
+&lt;img src="../static/images/photo.jpg" alt="Ma photo" width="300"&gt;
+            </pre>
+
+            <p><strong>Conseil :</strong> Mets toujours <code>alt</code> pour l’accessibilité.</p>
+            <p>Si l’image n’existe pas → texte <code>alt</code> s’affiche.</p>
+        </section>
+
+        <!-- ==================== PARTIE 8 ==================== -->
+        <section class="partie8">
+            <h2>VIII. Faire une barre de navigation</h2>
+            <p>Utilise <code>&lt;nav&gt;</code> + liste :</p>
+
+            <h3>Exemple complet</h3>
+            <pre class="code-block">
+&lt;nav&gt;
+    &lt;ul class="menu"&gt;
+        &lt;li&gt;&lt;a href="index.html"&gt;Accueil&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="page2.html"&gt;Tutoriel CSS&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+            </pre>
+
+            <div class="demo">
+                <nav style="background:#eee; padding:10px; border-radius:8px;">
+                    <ul style="list-style:none; display:flex; gap:20px; margin:0;">
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <!-- ==================== PARTIE 9 ==================== -->
+        <section class="partie9">
+            <h2>IX. Balises utiles (glossaire)</h2>
+            <ul>
+                <li><code>&lt;h1&gt;</code> → Titre principal (jusqu’à <code>h6</code>)</li>
+                <li><code>&lt;p&gt;</code> → Paragraphe</li>
+                <li><code>&lt;img src="..."&gt;</code> → Image</li>
+                <li><code>&lt;a href="..."&gt;</code> → Lien</li>
+                <li><code>&lt;div&gt;</code> → Bloc générique</li>
+                <li><code>&lt;section&gt;</code> → Bloc thématique, un chapitre, un paragraphe</li>
+                <li><code>&lt;button&gt;</code> → Bouton cliquable</li>
+                <li><code>&lt;nav&gt;</code> → Barre de navigation</li>
+                <li><code>&lt;footer&gt;</code> → Pied de page</li>
+            </ul>
+        </section>
+
+        <!-- ==================== PARTIE 10 ==================== -->
+        <section class="partie10">
+            <h2>X. zone de texte</h2>
+            <p>Utilise <code>&lt;input&gt;</code> + placeholder si tu veux en faire plusieurs cote a cote :</p>
+
+            <h3>Exemple complet</h3>
+            <pre class="code-block">
+&lt;div&lt;
+    &lt;input type="text" placeholder="Zone 1"&lt;
+    &lt;input type="text" placeholder="Zone 2"&lt;
+    &lt;input type="text" placeholder="Zone 3"&lt;
+&lt;/div&lt;
+            </pre>
+
+            <div>
+                <input type="text" placeholder="Zone 1">
+                <input type="text" placeholder="Zone 2">
+                <input type="text" placeholder="Zone 3">
+            </div>
+        </section>
+
+        <!-- ==================== PARTIE 11 ==================== -->
+        <section class="partie11">
+            <h2>XI. Le code HTML de cette page</h2>
+            <p>Voici **le code source complet** de cette page que tu es en train de lire :</p>
+            <p><strong>Clique droit → "Afficher le code source" → tu verras exactement ça !</strong></p>
+
+            <details>
+                <summary><strong>Clique pour voir le code complet</strong></summary>
+                <pre class="code-block" style="max-height:400px; overflow:auto;">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;TUTO-HTML - Créer sa page web&lt;/title&gt;
+    &lt;link rel="stylesheet" href="../static/style.css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;&lt;h1&gt;Tuto Page HTML&lt;/h1&gt;&lt;/header&gt;
+    &lt;main&gt;
+        &lt;section class="introduction"&gt;...&lt;/section&gt;
+        &lt;!-- Toutes les parties ci-dessus --&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+        &lt;p&gt;&lt;a href="page2.html"&gt;Page 2 : Tutoriel CSS&lt;/a&gt;&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </pre>
+            </details>
+
+            <p><strong>Tu peux copier ce code → le coller dans un nouveau fichier → et l’éditer !</strong></p>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="TUTO_CSS.html">Tutoriel CSS</a></p>
+    </footer>
+
+</body>
+</html>
